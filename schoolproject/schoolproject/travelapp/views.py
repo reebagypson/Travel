@@ -1,0 +1,10 @@
+from django.shortcuts import render
+from . models import Place
+from . models import Team
+# Create your views here.
+# def index(request):
+#     return render(request,"index.html")
+def index(request):
+    obj=Place.objects.all()
+    obj1=Team.objects.all()
+    return render(request,"index.html",{'result':obj,'result1':obj1})
